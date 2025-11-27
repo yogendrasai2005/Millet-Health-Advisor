@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Millet Health Advisor - AI-Powered Nutrition Recommendations</title>
+    <meta name="description" content="Personalized millet recommendations based on scientific research and AI analysis. Find the perfect millets for your health goals.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>Millet Advisor</span>
+            </div>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#recommendations">Get Recommendations</a>
+                <a href="#evidence">Scientific Evidence</a>
+                <button class="nav-cta" onclick="scrollToRecommendations()">
+                    
+                </button>
+            </div>
+            <button class="nav-mobile-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-particles" id="heroParticles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>AI-Powered Nutrition</span>
+                </div>
+                <h1 class="hero-title">
+                    Personalized Nutrition,
+                    <span class="gradient-text">Backed by Science</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Discover the perfect millets for your health goals with AI-driven recommendations, 
+                    scientific evidence, and real user experiences—all in one place.
+                </p>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="scrollToRecommendations()">
+                        <i class="fas fa-magic"></i>
+                        Get Personalized Recommendations
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToHowItWorks()">
+                        <i class="fas fa-play-circle"></i>
+                        See How It Works
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="section how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Three simple steps to your personalized millet recommendations</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-heart-circle-check"></i>
+                    </div>
+                    <h3>Select Health Concerns</h3>
+                    <p>Choose from common health goals like diabetes management, heart health, weight control, and more.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI analyzes scientific research and user experiences to find the best millets for your needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Get Recommendations</h3>
+                    <p>Receive personalized millet recommendations with scientific evidence and user reviews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Recommendations Section -->
+    <section id="recommendations" class="section recommendations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Health Profile</h2>
+                <p>Select your health concerns to get personalized millet recommendations</p>
+            </div>
+            
+            <div class="health-concerns-grid">
+                <div class="concern-card" data-concern="diabetes">
+                    <div class="concern-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <h4>Diabetes</h4>
+                    <p>Blood sugar management and glycemic control</p>
+                </div>
+                <div class="concern-card" data-concern="heart">
+                    <div class="concern-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h4>Heart Health</h4>
+                    <p>Cholesterol and blood pressure management</p>
+                </div>
+                <div class="concern-card" data-concern="digestive">
+                    <div class="concern-icon">
+                        <i class="fas fa-stomach"></i>
+                    </div>
+                    <h4>Digestive Health</h4>
+                    <p>Gut health and digestive comfort</p>
+                </div>
+                <div class="concern-card" data-concern="anemia">
+                    <div class="concern-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h4>Anemia</h4>
+                    <p>Iron deficiency and blood health</p>
+                </div>
+                <div class="concern-card" data-concern="weight">
+                    <div class="concern-icon">
+                        <i class="fas fa-weight-scale"></i>
+                    </div>
+                    <h4>Weight Management</h4>
+                    <p>Healthy weight loss and maintenance</p>
+                </div>
+                <div class="concern-card" data-concern="bones">
+                    <div class="concern-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h4>Bone Health</h4>
+                    <p>Calcium absorption and bone strength</p>
+                </div>
+                <div class="concern-card" data-concern="gluten">
+                    <div class="concern-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <h4>Gluten Sensitivity</h4>
+                    <p>Celiac disease and gluten intolerance</p>
+                </div>
+            </div>
+
+            <div class="selected-concerns-section">
+                <h3>Selected Health Concerns</h3>
+                <div id="selectedConcerns" class="selected-concerns-tags">
+                    <div class="empty-state">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Select health concerns to get started</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="query-section">
+                <div class="query-input">
+                    <label for="userQuery">
+                        <i class="fas fa-comment-medical"></i>
+                        Additional Health Details (Optional)
+                    </label>
+                    <textarea 
+                        id="userQuery" 
+                        placeholder="Tell us more about your health goals, dietary preferences, medications, or any specific symptoms..."
+                        rows="3"
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="actions-section">
+                <button id="getRecommendations" class="btn btn-primary btn-large">
+                    <i class="fas fa-magic"></i>
+                    Generate AI Recommendations
+                </button>
+                <p class="action-note">
+                    <i class="fas fa-shield-alt"></i>
+                    Your health data is private and secure
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state hidden">
+        <div class="loading-content">
+            <div class="loading-animation">
+                <div class="loading-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            <h3>Analyzing Your Health Profile</h3>
+            <p>Our AI is searching through scientific research and user experiences...</p>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="step active">
+                        <i class="fas fa-search"></i>
+                        <span>Analyzing health concerns</span>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-book-medical"></i>
+                        <span>Reviewing scientific evidence</span>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-users"></i>
+                        <span>Checking user experiences</span>
+                    </div>
+                    <div class="step">
+                        <i class="fas fa-robot"></i>
+                        <span>Generating recommendations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Section -->
+    <section id="resultsSection" class="section results hidden">
+        <div class="container">
+            <div class="results-header">
+                <h2>Your Personalized Millet Recommendations</h2>
+                <div id="resultsSummary" class="results-summary">
+                    <!-- AI summary will be inserted here -->
+                </div>
+                
+            </div>
+
+            <div id="recommendationsList" class="recommendations-list">
+                <!-- Recommendations will be inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Evidence Section -->
+    <section id="evidence" class="section evidence">
+        <div class="container">
+            <div class="section-header">
+                <h2>Scientific Evidence & Research</h2>
+                <p>Backed by peer-reviewed studies and nutritional science</p>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <div class="evidence-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Vector Database (RAG)</h3>
+                    <p>Our system queries a ChromaDB vector store populated with scientific literature and nutritional datasets. It uses semantic search to retrieve context-aware evidence regarding millet efficacy for specific health conditions (e.g., Diabetes, Anemia).</p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Nutritional Analysis</h3>
+                    <p>Quantitative analysis of macro and micro-nutrient profiles. The system calculates suitability scores based on specific bioactive compounds (Calcium, Iron, Fiber) to ensure recommendations align with biochemical health goals.</p>
+                </div>
+                <div class="evidence-card">
+                    <div class="evidence-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>User Experiences</h3>
+                    <p>A Natural Language Processing engine analyzes 781+ verified consumer reviews. It classifies feedback into positive, neutral, and negative clusters to predict user satisfaction regarding taste, texture, and digestibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>Millet Health Advisor</span>
+                    </div>
+                    <p>AI-powered nutrition recommendations based on scientific research and real user experiences.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Product</h4>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#recommendations">Recommendations</a>
+                        <a href="#evidence">Research</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        
+                        <a href="https://www.linkedin.com/in/yogendrasai-pabboju-64a4a9298/">LinkedIn</a>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Millet Health Advisor. Team 14</p>
+                <p class="disclaimer">
+                    <i class="fas fa-info-circle"></i>
+                    BL.EN.U4CSE22235<br>
+                    BL.EN.U4CSE22243<br>
+                    BL.EN.U4CSE22246
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
